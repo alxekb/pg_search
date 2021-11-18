@@ -13,4 +13,4 @@ if ENV['ACTIVE_RECORD_BRANCH']
 end
 
 # gem 'activerecord', ENV['ACTIVE_RECORD_VERSION'] if ENV['ACTIVE_RECORD_VERSION']
-gem 'activerecord', git: 'https://github.com/alxekb/rails.git', branch: 'main'
+gem 'rails', git: 'https://github.com/alxekb/rails.git', branch: 'main'
