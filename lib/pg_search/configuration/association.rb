@@ -16,6 +16,12 @@ module PgSearch
       end
 
       def table_name
+        if @model.reflect_on_association(@name) &&
+            @model.reflect_on_association(@name).options[:class_name].nil? &&
+            @model.reflect_on_association(@name).options[:polymorphic]
+          return @model.polymorphic_reflections.first
+        end
+
         @model.reflect_on_association(@name).table_name
       end
 
